@@ -23,8 +23,8 @@ Sakila:
 18.	–
 19.	–
 20.	–
-21.	Select count(film_id) from film_actor where actor_id =16;
-22.	Select counth(country_id) from country;
+21.	SELECT COUNT(film_id) FROM film_actor WHERE actor_id = 16;
+22.	SELECT COUNT(country_id) FROM country;
 23.	SELECT * FROM language
 -> ORDER BY name DESC;
 24.	
@@ -47,8 +47,31 @@ WORLD Challenge SQL:
 6.	SELECT Name FROM city WHERE name LIKE 'F%' ORDER BY name ASC LIMIT 25;
 7.	SELECT COUNT(CountryCode) FROM city
 -> JOIN country ON country.Code=city.CountryCode WHERE country.Name= 'China';
-8.	–
+8.	SELECT Name, Population FROM country WHERE Population IS NOT NULL
+    -> ORDER BY Population ASC LIMIT 5;
+9.      SELECT COUNT(Name) FROM country;
+10.     SELECT Name, SurfaceArea FROM country
+    -> ORDER BY SurfaceArea DESC LIMIT 10;
+11.     SELECT city.name FROM city
+    -> JOIN country ON country.Code=city.CountryCode
+    -> WHERE country.Name ='Japan' ORDER BY city.Population DESC LIMIT 5; 
+12.    -
+13.     SELECT Name, Population / SurfaceArea FROM country WHERE Population / SurfaceArea > 0
+    -> ORDER BY Population / SurfaceArea ASC LIMIT 10;
+14.     SELECT DISTINCT Language FROM countrylanguage;
+15.     SELECT Name, GNP FROM country
+    -> ORDER BY GNP DESC LIMIT 10;
+16.    -
+17.    -
+18.     SELECT Name, LifeExpectancy FROM country WHERE LifeExpectancy IS NOT NULL
+    -> ORDER BY LifeExpectancy ASC LIMIT 1;
+19.     SELECT Name, GovernmentForm, COUNT(GovernmentForm) FROM country
+    -> GROUP BY GovernmentForm
+    -> ORDER BY COUNT(GovernmentForm) DESC LIMIT 3; 
+20.     SELECT COUNT(IndepYear) FROM country WHERE IndepYear IS NOT NULL;   
+
 
 
 
 MovieLens:
+1.     
